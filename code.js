@@ -4,8 +4,11 @@ function palindrome(num, step = 0) {
         step: step
     };
     const reversNum = +num.toString().split('').reduce( (a, b) => b + a, '');
-    if (num === reversNum) return obj;
-    return palindrome(num + reversNum, ++step);
+    if (num === reversNum) {
+        return obj;
+    } else {
+        return palindrome(num + reversNum, ++step);
+    }
 }
 //проверка
 console.log(palindrome(312));
